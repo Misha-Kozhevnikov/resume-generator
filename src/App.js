@@ -207,8 +207,15 @@ export function initApp() {
   syncFormFields();
   updateUI();
 
-  appRoot.addEventListener('click', (event) => {
-    const button = event.target.closest('button');
+  // Прямые обработчики для кнопок, чтобы не зависеть от делегирования кликов
+  const clearDraftBtn = document.querySelector('#clearDraftBtn');
+  const refreshPreviewBtn = document.querySelector('#refreshPreviewBtn');
+
+  clearDraftBtn?.addEventListener('click', () => clearDraft());
+  refreshPreviewBtn?.addEventListener('click', () => updateUI());
+
+  document.addEventListener('click', (event) => {
+    const button = event.target?.closest?.('button');
     if (!button) return;
 
     if (button.id === 'nextBtn') {
