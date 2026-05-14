@@ -56,6 +56,11 @@ resume-generator-vite/
       └─ main.css
 ```
 
+## Клонирование с GitHub
+```bash
+git clone https://github.com/Misha-Kozhevnikov/resume-generator
+```
+
 ## Установка
 
 ### 1. Установите зависимости
